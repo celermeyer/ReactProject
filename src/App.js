@@ -13,6 +13,7 @@ import Offers from "./pages/Offers";
 import React, {useContext} from 'react';
 import ThemeBotton from "./components/BtnToggle/ThemeButton";
 import {ThemeContext} from "./Context/ThemeContext";
+import image from './img/discussion.png';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
   return (
         <div className={darkMode ? "App dark" : "App light"}>
             <header className="App-header">
+              <img className="App-img" src={image} alt="WeAllChat"/>
               <p>Welcome to the WeAll Chat</p>
               <BrowserRouter>
                 <Switch>

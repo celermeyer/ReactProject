@@ -12,8 +12,14 @@
 }
 
 .App-link {
-  color: #61dafb;
+  text-decoration: none;
+  margin-bottom: 15px;
+  padding: 5px 15px 5px 15px;
+  background-color: #aee7f7;
+  color: rgb(83, 83, 83);
+  border-radius: 20px;
 }
+
 
 .App.light{
   background-color: white;
@@ -23,6 +29,47 @@
 .App.dark{
   background-color: black;
   color: white;
+}
+
+
+.App.light .App-link{
+
+  color: #61dafb;
+  text-decoration: none;
+  margin-bottom: 15px;
+  padding: 5px 15px 5px 15px;
+  background-color: #aee7f7;
+  color: #000000;
+  border-radius: 20px;
+
+}
+
+.App.dark .App-link{
+  color: #61dafb;
+  text-decoration: none;
+  margin-bottom: 15px;
+  padding: 5px 15px 5px 15px;
+  background-color: #aee7f7;
+  color: #000000;
+  border-radius: 20px;
+}
+
+.App.light .App-link:hover{
+  background-color: #61dafb;
+}
+
+.App.dark .App-link:hover{
+
+  background-color: #61dafb;
+}
+
+.App-title{
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.App-img{
+  width: 300px;
 }
 
 .btn-toggle{
