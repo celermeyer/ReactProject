@@ -5,3 +5,30 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
 }
+
+.login-title{
+    margin-bottom: 30px;
+}
+
+.login-form{
+    margin-bottom: 15px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 15px;
+    border-color: #61dafb;
+    outline: none;
+}
+  
+
+::placeholder{
+    color:#00a5d3;
+}
+
+.btn-login{
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #61dafb;
+    text-transform: uppercase;
+    color: white;
+    margin-top: 15px;
+}

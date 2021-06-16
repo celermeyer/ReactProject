@@ -1,3 +1,5 @@
+import "./style.css";
+import "../App.css";
 import React, { useState } from "react";
 import { Backend } from "../services/backend";
 import {LOGGED_IN_USER_ID, TOKEN_STORAGE_KEY} from "../utils/request";
@@ -37,10 +39,11 @@ export default function Login() {
 
   return (
     <div>
-      <h1>Login</h1>
+      <h1 class="login-title">Login</h1>
 
       <form onSubmit={handleSubmit}>
         <input
+          class="login-form"
           required
           placeholder="E-mail"
           type="email"
@@ -49,6 +52,7 @@ export default function Login() {
         />
         <br />
         <input
+          class="login-form"
           required
           placeholder="Password"
           type="password"
@@ -56,7 +60,7 @@ export default function Login() {
           value={password}
         />
         <br />
-        <button type="submit">Login</button>
+        <button class="btn-login" type="submit">Login</button>
       </form>
     </div>
   );
