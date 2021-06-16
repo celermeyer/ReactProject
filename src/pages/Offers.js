@@ -1,3 +1,4 @@
+import "./style.css";
 import React, { useEffect, useState } from "react";
 import { Backend } from "../services/backend";
 import OffersCards from "../components/offers/offerCard";
@@ -22,7 +23,7 @@ export default function Offers() {
 
   return (
     <div>
-      <h1 className="headings">List of Offers</h1>
+      <h1 class="title-conversation">List of Offers</h1>
      <OffersCards offers={offers}/>
     </div>
   );
