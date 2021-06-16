@@ -82,3 +82,22 @@ li:hover{
     color: white;
     margin-top: 15px;
 }
+
+.close-title
+{
+    margin-bottom: 15px;
+}
+
+.select-close{
+    margin-bottom: 15px;
+}
+
+.btn-closeconv{
+    margin-top: 20px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #61dafb;
+    text-transform: uppercase;
+    color: white;
+}

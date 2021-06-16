@@ -53,7 +53,7 @@ export default function SendMessage(props) {
             value={message}
         />
         <br />
-        <button class="btn-send-message" type="submit" className="button">Send Message</button>
+        <button class="btn-send-message" type="submit">Send Message</button>
       </form>
     </div>
   );
