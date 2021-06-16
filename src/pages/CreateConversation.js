@@ -1,3 +1,4 @@
+import "./style.css";
 import React, { useEffect, useState } from "react";
 import { Backend } from "../services/backend";
 import { useHistory } from "react-router-dom";
@@ -56,7 +57,7 @@ export default function CreateConversation() {
               ))}
             </select>
             <br/>
-            <button type="submit">Create Conversation</button>
+            <button class="btn-send-message" type="submit">Create Conversation</button>
           </form>
       ) : (
         <p>No company available &#x1F615;</p>
