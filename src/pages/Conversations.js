@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Backend } from "../services/backend";
 import SendMessage from "./SendMessage";
+//import {Container, Row, Col } from "react-bootstrap/cjs/Container";
 import "./pagesStyle.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import {Link, useHistory, useParams} from "react-router-dom";
@@ -10,11 +11,9 @@ import "./style.css";
 
 export default function Conversations() {
   const [conversations, setConversations] = useState([]);
-    const [user1, setUser1] = useState([]);
-    const [user2, setUser2] = useState([]);
+    const [idUser1, setIdUser1] = useState([]);
+    const [idUser2, setIdUser2] = useState([]);
 
-    const {id} = useParams();
-    const history = useHistory();
     const loggedInUserId = localStorage.getItem(LOGGED_IN_USER_ID);
 
     // Load the companies on component mounting
@@ -49,8 +48,8 @@ export default function Conversations() {
 
                           <li onClick={()=> {
 
-                              setUser1(c.id_user1)
-                              setUser2(c.id_user2)
+                              setIdUser1(c.id_user1)
+                              setIdUser2(c.id_user2)
                           }} key={c.id_user2}>
                               <Link to={`/conversations/${c.id_user2}`}>
                               {c.nom_entreprise}
@@ -68,7 +67,7 @@ export default function Conversations() {
               <br/>
               <div className="col-sm-8">
                   {user1 > 0 &&
-                  <SendMessage user1={user1} user2={user2} />
+                  <SendMessage user1={idUser1} user2={idUser2} />
                   }
               </div>
           </div>

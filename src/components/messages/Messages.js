@@ -9,17 +9,17 @@ export default function ConversationMessages({messages}) {
     return (
         <div>
             {messages.filter(m => m.message !== null).map((m, index) => (
-                <p key={index}>
-                    {m.id_user1 === loggedInUserId ? (
-                        <div className="messagePostulant">
+                <div key={index}>
+                    {m.id_user1 == loggedInUserId ? (
+                        <div className="messagePostulant"><p class="whospeak">Moi:</p>
                             {m.message}
                         </div>
                     ) : (
-                        <div className="messageEntreprise">
+                        <div className="messageEntreprise"><p class="whospeak">Entreprise:</p>
                             {m.message}
                         </div>
                     )}
-                </p>
+                </div>
             ))}
         </div>
     );

@@ -1,3 +1,4 @@
+import "./style.css";
 import React, { useEffect, useState } from "react";
 import { Backend } from "../services/backend";
 import Messages from "../components/messages/Messages"
@@ -24,11 +25,11 @@ export default function ConversationMessages(props) {
     }, [props.user1, props.user2, props.newMessage]);
 
   return (
-      <div className="col-sm-8">
-        <h1 className="headings">Your Messages</h1>
-        <ul>
-         <Messages messages = {conversationMessages}/>
-        </ul>
+      <div>
+        <h1 class="title-conversation">Your Messages</h1>
+            <ul>
+            <Messages messages = {conversationMessages}/>
+            </ul>
       </div>
   );
 

@@ -29,8 +29,7 @@ export default function SendMessage(props) {
     <div className="col-sm-10">
       <ConversationMessages user1={props.user1} user2={props.user2} newMessage={newMessage}></ConversationMessages>
 
-
-      <form className="form-label" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <input
           hidden
           required
