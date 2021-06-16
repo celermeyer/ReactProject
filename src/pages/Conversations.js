@@ -1,3 +1,4 @@
+import "./style.css";
 import React, { useEffect, useState } from "react";
 import { Backend } from "../services/backend";
 import SendMessage from "./SendMessage";
@@ -28,34 +29,28 @@ export default function Conversations() {
     }, [loggedInUserId]);
 
   return (
-      <div className="container">
-          <div className="row">
-            <div className="col-sm-4">
-              <h1 className="headings">Your Conversations</h1>
-              {conversations.length > 0 ? (
-                  <ul>
-                      {conversations.map((c) => (
-                          <li onClick={()=> {
-                              setUser1(c.id_user1)
-                              setUser2(c.id_user2)
-                          }} key={c.id_user2}>{c.nom_entreprise}</li>
-                      ))}
-                  </ul>
-              ) : (
-                  <p>No conversation yet &#x1F615;</p>
-              )}
+      <div>
+            <h1 class="title-conversation">Your Conversations</h1>
+            {conversations.length > 0 ? (
+                <ul>
+                    {conversations.map((c) => (
+                        <li onClick={()=> {
+                            setUser1(c.id_user1)
+                            setUser2(c.id_user2)
+                        }} key={c.id_user2}>{c.nom_entreprise}</li>
+                    ))}
+                </ul>
+            ) : (
+                <p>No conversation yet &#x1F615;</p>
+            )}
+                
+            <br/>
+
+            <div>
+                {user1 > 0 &&
+                <SendMessage user1={user1} user2={user2} />
+                }
             </div>
-              <br/>
-              <div className="col-sm-4">
-                  {user1 > 0 &&
-                  <SendMessage user1={user1} user2={user2} />
-                  }
-              </div>
-          </div>
-
       </div>
-
-
   );
-
 }

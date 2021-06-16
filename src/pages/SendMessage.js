@@ -1,3 +1,4 @@
+import "./style.css";
 import React, {useState} from "react";
 import { Backend } from "../services/backend";
 import ConversationMessages from "./ConversationMessages";
@@ -27,7 +28,7 @@ export default function SendMessage(props) {
   return (
     <div className="col-sm-4">
       <ConversationMessages user1={props.user1} user2={props.user2} newMessage={newMessage}></ConversationMessages>
-      <h4>Send a message</h4>
+      <h4 class="send-message-title">Send a message</h4>
 
       <form onSubmit={handleSubmit}>
         <input
@@ -44,7 +45,7 @@ export default function SendMessage(props) {
           type="text"
           value={props.user2}
         />
-        <input
+        <input class="send-message"
             required
             placeholder="message"
             type="text"
@@ -52,7 +53,7 @@ export default function SendMessage(props) {
             value={message}
         />
         <br />
-        <button type="submit" className="button">Send Message</button>
+        <button class="btn-send-message" type="submit" className="button">Send Message</button>
       </form>
     </div>
   );
