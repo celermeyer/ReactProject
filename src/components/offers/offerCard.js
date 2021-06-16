@@ -11,8 +11,8 @@ export default function OffersCards ({offers}){
                        <h2 className="offerName">{offer.nom}</h2>
                    </div>
                    <div className="bottomOfOffer">
-                       <p className="infoOffer">{offer.taux} taux </p>
-                       <p className="infoOffer"> visit us at {offer.url}</p>
+                       <p className="infoOffer">Occupancy rate : {offer.taux} </p>
+                       <p className="infoOffer"> Visit us at : {offer.url}</p>
                        <p className="infoOffer"> Contrat : {offer.contrat}</p>
                    </div>
                </li>
