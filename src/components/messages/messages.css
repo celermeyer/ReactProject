@@ -5,6 +5,8 @@
     background-color: #aee7f7;
     border-radius: 15px;
     text-align: left;
+    margin-bottom: 15px;
+    padding: 5px 15px 5px 15px;
 }
 
 .messageEntreprise {
@@ -12,4 +14,13 @@
     font-size: 1em;
     font-style: italic;
     text-align: right;
+    margin-bottom: 15px;
+    padding: 5px 5px 5px 15px;
+}
+
+.whospeak{
+    font-size: 10px;
+    text-align: left;
+    margin-bottom: 0;
+    color: black;
 }

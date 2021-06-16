@@ -26,9 +26,8 @@ export default function SendMessage(props) {
   };
 
   return (
-    <div className="col-sm-4">
+    <div className="col-sm-20">
       <ConversationMessages user1={props.user1} user2={props.user2} newMessage={newMessage}></ConversationMessages>
-      <h4 class="send-message-title">Send a message</h4>
 
       <form onSubmit={handleSubmit}>
         <input
@@ -47,7 +46,7 @@ export default function SendMessage(props) {
         />
         <input class="send-message"
             required
-            placeholder="message"
+            placeholder="Send a message"
             type="text"
             onChange={handleMessageChange}
             value={message}

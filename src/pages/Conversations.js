@@ -30,6 +30,15 @@ export default function Conversations() {
 
   return (
       <div>
+        <div class="container">
+            <div class="row">
+                <div class="col">Column</div>
+                <div class="col">Column</div>
+                <div class="w-100"></div>
+                <div class="col">Column</div>
+                <div class="col">Column</div>
+            </div>
+        </div>
             <h1 class="title-conversation">Your Conversations</h1>
             {conversations.length > 0 ? (
                 <ul>
@@ -46,11 +55,11 @@ export default function Conversations() {
                 
             <br/>
 
-            <div>
+           
                 {user1 > 0 &&
                 <SendMessage user1={user1} user2={user2} />
                 }
-            </div>
+          
       </div>
   );
 }
