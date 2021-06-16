@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Backend } from "../services/backend";
 import { useHistory } from "react-router-dom";
 import {LOGGED_IN_USER_ID} from "../utils/request";
+import "./style.css";
 
 export default function CreateConversation() {
   const [idUserEnterprise, setIdUserEnterprise] = useState("");
@@ -16,6 +17,7 @@ export default function CreateConversation() {
         let companies = await Backend.getCompanies();
         setCompanies(companies);
         setIdUserEnterprise(companies[0].id_user);
+        console.log("Company[0].id_user" + companies[0].id_user);
       } catch (e) {
         console.error(e);
       }
@@ -56,7 +58,7 @@ export default function CreateConversation() {
               ))}
             </select>
             <br/>
-            <button type="submit">Create Conversation</button>
+            <button class="btn-send-message" type="submit">Create Conversation</button>
           </form>
       ) : (
         <p>No company available &#x1F615;</p>

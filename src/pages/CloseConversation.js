@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Backend } from "../services/backend";
 import { useHistory } from "react-router-dom";
 import {LOGGED_IN_USER_ID} from "../utils/request";
+import "./style.css";
 
 export default function CreateConversation() {
   const [idUserEnterprise, setIdUserEnterprise] = useState("");
@@ -47,7 +48,7 @@ export default function CreateConversation() {
 
   return (
       <div>
-        <h1>Close a Conversation</h1>
+        <h1 className="close-title">Close a Conversation</h1>
         {companies.filter(c => c.nom !== "").length > 0 ? (
             <form onSubmit={handleSubmit}>
               <select value={idUserEnterprise} onChange={handleIdUserEnterpriseChange}>
@@ -56,7 +57,7 @@ export default function CreateConversation() {
                 ))}
               </select>
               <br/>
-              <button type="submit">Close Conversation</button>
+              <button className="btn-closeconv" type="submit">Close Conversation</button>
             </form>
         ) : (
             <p>No company available &#x1F615;</p>

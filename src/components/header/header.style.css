@@ -1,0 +1,27 @@
+.upperMenu{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.App-img {
+    justify-content: center;
+    width: 200px;
+
+}
+
+.menuOptions {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+
+.option {
+    padding: 10px 15px;
+}
+

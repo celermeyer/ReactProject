@@ -14,31 +14,34 @@ import React, {useContext} from 'react';
 import ThemeBotton from "./components/BtnToggle/ThemeButton";
 import {ThemeContext} from "./Context/ThemeContext";
 import image from './img/discussion.png';
+import Header from "./components/header/Header";
+
 
 
 function App() {
 
   const {darkMode} = useContext(ThemeContext)
+
   return (
         <div className={darkMode ? "App dark" : "App light"}>
-            <header className="App-header">
-              <img className="App-img" src={image} alt="WeAllChat"/>
-              <p>Welcome to the WeAll Chat</p>
-              <BrowserRouter>
-                <Switch>
-                  <Route path="/" exact component={Home} />
-                  <Route path="/users" component={Users} />
-                  <Route path="/appliers" component={Appliers} />
-                  <Route path="/offers" component={Offers} />
-                  <Route path="/conversations" component={Conversations} />
-                  <Route path="/createConversation" component={CreateConversation} />
-                  <Route path="/closeConversation" component={CloseConversation} />
-                  <Route path="/conversationMessages" component={ConversationMessages} />
-                  <Route path="/sendMessage" component={SendMessage} />
-                  <Route path="/login" component={Login} />
-                </Switch>
-              </BrowserRouter>
-            </header>
+          <header className="App-header">
+                <p>Welcome to the WeAll Chat</p>
+            <BrowserRouter>
+              <Header/>
+              <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/users" component={Users} />
+                <Route path="/appliers" component={Appliers} />
+                <Route path="/offers/:id?"  component={Offers} />
+                <Route path="/conversations/:id?" component={Conversations} />
+                <Route path="/createConversation" component={CreateConversation} />
+                <Route path="/closeConversation" component={CloseConversation} />
+                <Route path="/conversationMessages" component={ConversationMessages} />
+                <Route path="/sendMessage" component={SendMessage} />
+                <Route path="/login" component={Login} />
+              </Switch>
+            </BrowserRouter>
+          </header>
           <ThemeBotton/>
         </div>
   );

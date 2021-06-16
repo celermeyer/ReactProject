@@ -10,7 +10,7 @@ export default function ConversationMessages({messages}) {
         <div>
             {messages.filter(m => m.message !== null).map((m, index) => (
                 <p key={index}>
-                    {m.id_user1 == loggedInUserId ? (
+                    {m.id_user1 === loggedInUserId ? (
                         <div className="messagePostulant">
                             {m.message}
                         </div>

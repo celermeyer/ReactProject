@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { Backend } from "../services/backend";
 import ConversationMessages from "./ConversationMessages";
+import "./style.css";
 
 export default function SendMessage(props) {
   const [message, setMessage] = useState("");
@@ -25,11 +26,11 @@ export default function SendMessage(props) {
   };
 
   return (
-    <div className="col-sm-4">
+    <div className="col-sm-10">
       <ConversationMessages user1={props.user1} user2={props.user2} newMessage={newMessage}></ConversationMessages>
-      <h4>Send a message</h4>
 
-      <form onSubmit={handleSubmit}>
+
+      <form className="form-label" onSubmit={handleSubmit}>
         <input
           hidden
           required
@@ -44,16 +45,17 @@ export default function SendMessage(props) {
           type="text"
           value={props.user2}
         />
-        <input
+        <input className="form-floating"
             required
-            placeholder="message"
+            placeholder="your message here"
             type="text"
             onChange={handleMessageChange}
             value={message}
         />
         <br />
-        <button type="submit" className="button">Send Message</button>
+
       </form>
+      <button type="submit" className="button">Send Message</button>
     </div>
   );
 }

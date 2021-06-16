@@ -5,3 +5,129 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
 }
+
+.login-title{
+    margin-bottom: 30px;
+}
+
+.login-form{
+    margin-bottom: 15px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 15px;
+    border-color: #61dafb;
+    outline: none;
+}
+
+::placeholder{
+    color:#00a5d3;
+    font-size: 13px;
+    padding-left: 10px;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.btn-login{
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #61dafb;
+    text-transform: uppercase;
+    color: white;
+    margin-top: 15px;
+}
+
+h1.headings{
+    color: #61dafb;
+
+}
+
+li{
+    list-style-type: none;
+    margin: 15px 0 15px 0;
+    color: #61dafb;
+    background-color: #aee7f7;
+    color: #000000;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+li:hover{
+    background-color: #61dafb;
+}
+
+.title-conversation{
+    margin-bottom: 30px;
+}
+
+.send-message-title{
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+.send-message{
+    border-radius: 25px;
+    margin-bottom: 20px;
+    outline: none;
+    padding-left: 15px;
+}
+
+.btn-send-message
+{
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #61dafb;
+    text-transform: uppercase;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 150px;
+}
+
+.close-title
+{
+    margin-bottom: 15px;
+}
+
+.select-close{
+    margin-bottom: 15px;
+}
+
+.btn-closeconv{
+    margin-top: 20px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #61dafb;
+    text-transform: uppercase;
+    color: white;
+}
+
+.form-label {
+    border-radius: 25px 25px 25px 25px;
+    border: none;
+    background-color: #f1f1f1;
+    padding-left: 0;
+    margin-left: 0px;
+    justify-content: flex-start;
+    width: 25%;
+
+}
+
+.form-floating {
+    background-color: #f1f1f1;
+    border: none;
+    padding-left: 0;
+    margin-left: 0px;
+    justify-content: flex-start;
+
+
+}
+.button {
+    margin-top: 20px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #61dafb;
+    text-transform: uppercase;
+    color: white;
+}
