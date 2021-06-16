@@ -2,7 +2,7 @@ import "./style.css";
 import "../App.css";
 import React, { useState } from "react";
 import { Backend } from "../services/backend";
-import {LOGGED_IN_USER_ID, TOKEN_STORAGE_KEY} from "../utils/request";
+import {LOGGED_IN_USER_ID, TOKEN_STORAGE_KEY, LOGGED_IN_USER_IS_ENTERPRISE} from "../utils/request";
 import { useHistory } from "react-router-dom";
 
 export default function Login() {
@@ -29,6 +29,7 @@ export default function Login() {
       // Save the token to localStorage & redirect to the home page
       localStorage.setItem(TOKEN_STORAGE_KEY, loginData.token);
       localStorage.setItem(LOGGED_IN_USER_ID, loginData.userId);
+      localStorage.setItem(LOGGED_IN_USER_IS_ENTERPRISE, loginData.isEnterprise);
 
       // Redirect to the home page
       history.push("/");

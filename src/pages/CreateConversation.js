@@ -2,34 +2,39 @@ import "./style.css";
 import React, { useEffect, useState } from "react";
 import { Backend } from "../services/backend";
 import { useHistory } from "react-router-dom";
-import {LOGGED_IN_USER_ID} from "../utils/request";
+import {LOGGED_IN_USER_ID, LOGGED_IN_USER_IS_ENTERPRISE} from "../utils/request";
 
 export default function CreateConversation() {
-  const [idUserEnterprise, setIdUserEnterprise] = useState("");
-  const [companies, setCompanies] = useState([]);
+  const [idUser2, setIdUser2] = useState("");
+  const [usersList, setUsersList] = useState([]);
 
   const loggedInUserId = localStorage.getItem(LOGGED_IN_USER_ID);
 
   // Load the companies on component mounting
   useEffect(() => {
-    async function fetchCompanies() {
+    async function fetchUsersList() {
       try {
-        let companies = await Backend.getCompanies();
-        setCompanies(companies);
-        setIdUserEnterprise(companies[0].id_user);
+        let localUsersList;
+        if(localStorage.getItem(LOGGED_IN_USER_IS_ENTERPRISE) == 'true'){
+          localUsersList = await Backend.getAppliers();
+        }else{
+          localUsersList = await Backend.getCompanies();
+        }
+
+        setUsersList(localUsersList);
+        setIdUser2(localUsersList[0].id_user);
       } catch (e) {
         console.error(e);
       }
     }
 
-    fetchCompanies();
+    fetchUsersList();
   }, []);
 
   const history = useHistory();
 
-
-  const handleIdUserEnterpriseChange = (e) => {
-    setIdUserEnterprise(e.target.value);
+  const handleIdUser2Change = (e) => {
+    setIdUser2(e.target.value);
   };
 
   const handleSubmit = async (e) => {
@@ -37,7 +42,7 @@ export default function CreateConversation() {
     e.preventDefault();
 
     try {
-      await Backend.createConversation(loggedInUserId, idUserEnterprise);
+      await Backend.createConversation(loggedInUserId, idUser2);
 
       // Redirect to the home page
       history.push("/");
@@ -47,21 +52,21 @@ export default function CreateConversation() {
   };
 
   return (
-    <div>
-      <h1 className="headings">Create a Conversation</h1>
-      {companies.filter(c => c.nom !== "").length > 0 ? (
-          <form onSubmit={handleSubmit}>
-            <select value={idUserEnterprise} onChange={handleIdUserEnterpriseChange}>
-              {companies.filter(c => c.nom !== "").map((c) => (
-                  <option value={c.id_user}>{c.nom}</option>
-              ))}
-            </select>
-            <br/>
-            <button class="btn-send-message" type="submit">Create Conversation</button>
-          </form>
-      ) : (
-        <p>No company available &#x1F615;</p>
-      )}
-    </div>
+      <div>
+        <h1 class="close-title">Create a Conversation</h1>
+        {usersList.filter(u => u.nom !== "").length > 0 ? (
+            <form onSubmit={handleSubmit}>
+              <select value={idUser2} onChange={handleIdUser2Change}>
+                {usersList.filter(u => u.nom !== "").map((u) => (
+                    <option  value={u.id_user}>{u.nom} {u.prenom}</option>
+                ))}
+              </select>
+              <br/>
+              <button class="btn-closeconv" type="submit">Create Conversation</button>
+            </form>
+        ) : (
+            <p>No data available &#x1F615;</p>
+        )}
+      </div>
   );
 }

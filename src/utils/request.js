@@ -1,5 +1,6 @@
 export const TOKEN_STORAGE_KEY = "token";
 export const LOGGED_IN_USER_ID = "0";
+export const LOGGED_IN_USER_IS_ENTERPRISE = false;
 
 export default async function request(
   url,

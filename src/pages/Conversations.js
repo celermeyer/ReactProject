@@ -9,8 +9,8 @@ import {LOGGED_IN_USER_ID} from "../utils/request";
 
 export default function Conversations() {
   const [conversations, setConversations] = useState([]);
-    const [user1, setUser1] = useState([]);
-    const [user2, setUser2] = useState([]);
+    const [idUser1, setIdUser1] = useState([]);
+    const [idUser2, setIdUser2] = useState([]);
 
     const loggedInUserId = localStorage.getItem(LOGGED_IN_USER_ID);
 
@@ -35,8 +35,8 @@ export default function Conversations() {
                 <ul>
                     {conversations.map((c) => (
                         <li onClick={()=> {
-                            setUser1(c.id_user1)
-                            setUser2(c.id_user2)
+                            setIdUser1(c.id_user1)
+                            setIdUser2(c.id_user2)
                         }} key={c.id_user2}>{c.nom_entreprise}</li>
                     ))}
                 </ul>
@@ -47,8 +47,8 @@ export default function Conversations() {
             <br/>
 
             <div>
-                {user1 > 0 &&
-                <SendMessage user1={user1} user2={user2} />
+                {idUser1 > 0 &&
+                <SendMessage user1={idUser1} user2={idUser2} />
                 }
             </div>
       </div>
