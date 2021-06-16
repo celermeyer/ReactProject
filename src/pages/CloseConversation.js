@@ -1,8 +1,9 @@
-import "./style.css";
 import React, { useEffect, useState } from "react";
 import { Backend } from "../services/backend";
 import { useHistory } from "react-router-dom";
 import {LOGGED_IN_USER_ID, LOGGED_IN_USER_IS_ENTERPRISE} from "../utils/request";
+import "./style.css";
+
 
 export default function CloseConversation() {
   const [idUser2, setIdUser2] = useState("");

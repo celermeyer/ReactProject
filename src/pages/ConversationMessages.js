@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Backend } from "../services/backend";
 import Messages from "../components/messages/Messages"
 import "./pagesStyle.css";
+import "./style.css";
 
 export default function ConversationMessages(props) {
 

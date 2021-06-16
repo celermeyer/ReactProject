@@ -9,9 +9,9 @@
 
 .headings {
     color: aqua;
-    font-size: 2em;
+    font-size: 3vw;
     display: flex;
-    color: bisque;
+    color: coral;
 }
 
 .button {

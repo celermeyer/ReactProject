@@ -1,8 +1,8 @@
-import "./style.css";
 import React, { useEffect, useState } from "react";
 import { Backend } from "../services/backend";
 import { useHistory } from "react-router-dom";
 import {LOGGED_IN_USER_ID, LOGGED_IN_USER_IS_ENTERPRISE} from "../utils/request";
+import "./style.css";
 
 export default function CreateConversation() {
   const [idUser2, setIdUser2] = useState("");
@@ -53,7 +53,7 @@ export default function CreateConversation() {
 
   return (
       <div>
-        <h1 class="close-title">Create a Conversation</h1>
+        <h1 class="headings">Create a Conversation</h1>
         {usersList.filter(u => u.nom !== "").length > 0 ? (
             <form onSubmit={handleSubmit}>
               <select value={idUser2} onChange={handleIdUser2Change}>
