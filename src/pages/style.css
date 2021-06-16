@@ -20,6 +20,9 @@
 
 ::placeholder{
     color:#00a5d3;
+    font-size: 13px;
+    padding-left: 15px;
+    text-transform: uppercase;
 }
 
 .btn-login{
@@ -65,11 +68,6 @@ li:hover{
     margin-bottom: 20px;
     outline: none;
     padding-left: 15px;
-}
-
-::placeholder{
-    padding-left: 15px;
-    
 }
 
 .btn-send-message
