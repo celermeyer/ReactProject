@@ -14,7 +14,9 @@ export default function Conversations() {
     const [idUser1, setIdUser1] = useState([]);
     const [idUser2, setIdUser2] = useState([]);
 
+    const {id} = useParams();
     const loggedInUserId = localStorage.getItem(LOGGED_IN_USER_ID);
+    const history = useHistory();
 
     // Load the companies on component mounting
     useEffect(() => {
@@ -66,7 +68,7 @@ export default function Conversations() {
             </div>
               <br/>
               <div className="col-sm-8">
-                  {user1 > 0 &&
+                  {idUser1 > 0 &&
                   <SendMessage user1={idUser1} user2={idUser2} />
                   }
               </div>
