@@ -26,6 +26,7 @@ export default function Offers() {
         if(id) {
           finalOffers = offers.filter(o => o.id_offre === +id);
           let companies = offers.find(o => o.id_offre === +id).id_entreprise
+
           console.log("Company name" + companies.nom);
         }
         setOffers(finalOffers);

@@ -27,7 +27,7 @@ export default function SendMessage(props) {
 
   return (
     <div className="col-sm-10">
-      <ConversationMessages user1={props.user1} user2={props.user2} newMessage={newMessage}></ConversationMessages>
+      <ConversationMessages user1={props.user1} user2={props.user2} newMessage={newMessage}/>
 
       <form onSubmit={handleSubmit}>
         <input
@@ -44,7 +44,7 @@ export default function SendMessage(props) {
           type="text"
           value={props.user2}
         />
-        <input className="form-floating"
+        <input
             required
             placeholder="your message here"
             type="text"

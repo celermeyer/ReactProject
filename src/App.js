@@ -9,6 +9,7 @@ import Users from "./pages/Users";
 import CreateConversation from "./pages/CreateConversation";
 import CloseConversation from "./pages/CloseConversation";
 import SendMessage from "./pages/SendMessage";
+import FAQ from "./pages/FAQ";
 import Offers from "./pages/Offers";
 import React, {useContext} from 'react';
 import ThemeBotton from "./components/BtnToggle/ThemeButton";
@@ -38,6 +39,7 @@ function App() {
                 <Route path="/closeConversation" component={CloseConversation} />
                 <Route path="/conversationMessages" component={ConversationMessages} />
                 <Route path="/sendMessage" component={SendMessage} />
+                <Route path="/FAQ" component={FAQ}/>
                 <Route path="/login" component={Login} />
               </Switch>
             </BrowserRouter>

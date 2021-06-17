@@ -69,7 +69,7 @@ export default function Conversations() {
               <br/>
               <div className="col-sm-8">
                   {idUser1 > 0 &&
-                  <SendMessage user1={idUser1} user2={idUser2} />
+                  <SendMessage idUser1={idUser1} idUser1={idUser2} />
                   }
               </div>
           </div>

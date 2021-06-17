@@ -131,3 +131,20 @@ li:hover{
     text-transform: uppercase;
     color: white;
 }
+
+.title {
+    color: #2d3436;
+}
+
+. row {
+    color: #00a5d3;
+}
+
+.rowContentColor {
+    color: #f50c0c;
+}
+
+.imageForFAQ {
+    width: 50%;
+    height: 25%;
+}
