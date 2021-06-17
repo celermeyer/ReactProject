@@ -15,6 +15,9 @@ export default function CloseConversation() {
   useEffect(() => {
     async function fetchUsersList() {
       try {
+
+        let conversations = await Backend.getUserConversations(loggedInUserId);
+
         let localUsersList;
         if(localStorage.getItem(LOGGED_IN_USER_IS_ENTERPRISE) == 'true'){
           localUsersList = await Backend.getAppliers();
@@ -22,8 +25,11 @@ export default function CloseConversation() {
           localUsersList = await Backend.getCompanies();
         }
 
-        setUsersList(localUsersList);
-        setIdUser2(localUsersList[0].id_user);
+        let finalList = [];
+        localUsersList.forEach(user => (conversations.find(conversation => conversation.id_user2 == user.id_user)==undefined) ? console.log('vide') : finalList.push(user));
+
+        setUsersList(finalList);
+        setIdUser2(finalList[0].id_user);
       } catch (e) {
         console.error(e);
       }
@@ -60,7 +66,7 @@ export default function CloseConversation() {
             <form onSubmit={handleSubmit}>
               <select value={idUser2} onChange={handleIdUser2Change}>
                 {usersList.filter(u => u.nom !== "").map((u) => (
-                    <option  value={u.id_user}>{u.nom} {u.prenom}</option>
+                    <option  value={u.id_user}>{u.prenom} {u.nom}</option>
                 ))}
               </select>
               <br/>

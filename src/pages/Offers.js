@@ -61,8 +61,6 @@ export default function Offers() {
         console.error(e);
       }
     }
-
-
   };
 
   return (
