@@ -31,7 +31,7 @@ function App() {
                 <Link className ='logo-container' to="/">
                     <img className="App-img" src={image} alt="WeAllChat"/>
                 </Link>
-              <Header/>
+              {/*<Header/>*/}
               <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/users" component={Users} />

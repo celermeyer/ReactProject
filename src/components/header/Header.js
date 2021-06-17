@@ -1,12 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import image from "../../img/discussion.png";
 import './header.style.css';
 import {LOGGED_IN_USER_ID, LOGGED_IN_USER_IS_ENTERPRISE, TOKEN_STORAGE_KEY} from "../../utils/request";
 
 
-export default  function Header ()  {
-
+export default function Header ()  {
 
         const logout = (e) => {
             e.preventDefault();
@@ -16,13 +14,15 @@ export default  function Header ()  {
             window.location = "/";
         }
 
+        console.log(localStorage.getItem(LOGGED_IN_USER_ID));
+
     return (
                 <div className="menuOptions">
-                    <Link className='App-link'  to='/FAQ'>
+                    <Link className='App-link'  to={'/FAQ'}>
                         FAQ
                     </Link>
 
-                    <Link className='App-link' to='/conversations'>
+                    <Link className='App-link' to={'/conversations'}>
                         Conversations
                     </Link>
                     {localStorage.getItem(LOGGED_IN_USER_IS_ENTERPRISE) == 'true' ? (

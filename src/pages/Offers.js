@@ -69,9 +69,9 @@ export default function Offers() {
         <div>
         <h1 className="headings">List of Offers</h1>
         <OffersCards offers={offers} />
-          <form onSubmit={handleSendMessage}>
-            <button type="sendMessage">Send a message</button>
-          </form>
+          {/*<form onSubmit={handleSendMessage}>*/}
+          {/*  <button type="sendMessage">Send a message</button>*/}
+          {/*</form>*/}
         </div>
 
   );

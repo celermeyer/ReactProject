@@ -24,7 +24,7 @@ export default function Appliers() {
   return(
       <div >
         <h1>List of Appliers</h1>
-        {appliers.map((c, index)=>(
+        {appliers.filter(c => c.nom !== "").map((c, index)=>(
             <li key={index} className="offerCard">
               <Link to={`/offers/${c.id_offre}`}>
                 <div className="topOfOffer">

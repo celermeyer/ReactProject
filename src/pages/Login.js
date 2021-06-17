@@ -30,9 +30,11 @@ export default function Login() {
       localStorage.setItem(TOKEN_STORAGE_KEY, loginData.token);
       localStorage.setItem(LOGGED_IN_USER_ID, loginData.userId);
       localStorage.setItem(LOGGED_IN_USER_IS_ENTERPRISE, loginData.isEnterprise);
+      console.log(localStorage.getItem(LOGGED_IN_USER_IS_ENTERPRISE));
 
       // Redirect to the home page
       history.push("/");
+
     } catch (e) {
       console.error(e);
     }
