@@ -6,7 +6,7 @@
     background-color: #95dada;
     border: 1px solid grey;
     border-radius: 25px;
-    padding: 25px;
+    padding: 65px;
     cursor: pointer;
     -moz-osx-font-smoothing: grayscale;
     backface-visibility: hidden;
@@ -37,8 +37,7 @@
     margin: 20px 0;
     color: #1a7e76;
     font-size: 2vw;
-    display: compact;
-
+    text-align: left;
 }
 
 .offerName {
