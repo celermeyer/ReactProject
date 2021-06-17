@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Backend } from "../services/backend";
+import {Link} from "react-router-dom";
+import "../components/offers/offerCard.css";
 
 export default function Appliers() {
   // Hold the list of appliers in the component state
@@ -19,14 +21,23 @@ export default function Appliers() {
     fetchAppliers();
   }, []);
 
-  return (
-    <div>
-      <h1>List of Appliers</h1>
-      <ul>
-        {appliers.map((c) => (
-          <li key={c.id_postulant}>{c.nom + " " + c.prenom}</li>
+  return(
+      <div >
+        <h1>List of Appliers</h1>
+        {appliers.map((c, index)=>(
+            <li key={index} className="offerCard">
+              <Link to={`/offers/${c.id_offre}`}>
+                <div className="topOfOffer">
+                  <h2 className="offerName">{c.nom + " " + c.prenom} </h2>
+                </div>
+                <div className="bottomOfOffer">
+                  <p className="infoOffer">• Sex : {c.sexe} </p>
+                  <p className="infoOffer">• City : {c.localite}</p>
+                  <p className="infoOffer">• Available : {c.disponibilite}</p>
+                </div>
+              </Link>
+            </li>
         ))}
-      </ul>
-    </div>
+      </div>
   );
 }

@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import {BrowserRouter, Link, Route, Switch} from "react-router-dom";
 import Conversations from "./pages/Conversations";
 import ConversationMessages from "./pages/ConversationMessages";
 import Login from "./pages/Login";
@@ -28,6 +28,9 @@ function App() {
           <header className="App-header">
                 <p>Welcome to the WeAll Chat</p>
             <BrowserRouter>
+                <Link className ='logo-container' to="/">
+                    <img className="App-img" src={image} alt="WeAllChat"/>
+                </Link>
               <Header/>
               <Switch>
                 <Route path="/" exact component={Home} />
