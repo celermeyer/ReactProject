@@ -21,8 +21,8 @@ export default function ConversationMessages(props) {
             }
         }
 
-        fetchconversationMessages(props.user1, props.user2);
-    }, [props.user1, props.user2, props.newMessage]);
+        fetchconversationMessages(props.idUser1, props.idUser2);
+    }, [props.idUser1, props.idUser2, props.newMessage]);
 
   return (
       <div>

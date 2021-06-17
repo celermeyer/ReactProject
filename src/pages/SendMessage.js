@@ -12,11 +12,14 @@ export default function SendMessage(props) {
   };
 
   const handleSubmit = async (e) => {
+
+    console.log('Send message');
+
     // Stop the browser from submitting in the "traditional" way
     e.preventDefault();
 
     try {
-      await Backend.sendMessage(props.user1, props.user2, message);
+      await Backend.sendMessage(props.idUser1, props.idUser2, message);
 
       setMessage("");
       setNewMessage(newMessage+1);
@@ -27,23 +30,9 @@ export default function SendMessage(props) {
 
   return (
     <div className="col-sm-10">
-      <ConversationMessages user1={props.user1} user2={props.user2} newMessage={newMessage}/>
+      <ConversationMessages idUser1={props.idUser1} idUser2={props.idUser2} newMessage={newMessage}/>
 
       <form onSubmit={handleSubmit}>
-        <input
-          hidden
-          required
-          placeholder="id applier"
-          type="text"
-          value={props.user1}
-        />
-        <input
-          hidden
-          required
-          placeholder="id enterprise"
-          type="text"
-          value={props.user2}
-        />
         <input
             required
             placeholder="your message here"
@@ -52,9 +41,8 @@ export default function SendMessage(props) {
             value={message}
         />
         <br />
-
+        <button className="button" type="submit">Send Message</button>
       </form>
-      <button type="submit" className="button">Send Message</button>
     </div>
   );
 }

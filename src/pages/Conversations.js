@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Backend } from "../services/backend";
 import SendMessage from "./SendMessage";
-//import {Container, Row, Col } from "react-bootstrap/cjs/Container";
 import "./pagesStyle.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import {Link, useHistory, useParams} from "react-router-dom";
@@ -14,9 +13,9 @@ export default function Conversations() {
     const [idUser1, setIdUser1] = useState([]);
     const [idUser2, setIdUser2] = useState([]);
 
-    const {id} = useParams();
+    //const {id} = useParams();
     const loggedInUserId = localStorage.getItem(LOGGED_IN_USER_ID);
-    const history = useHistory();
+    //const history = useHistory();
 
     // Load the companies on component mounting
     useEffect(() => {
@@ -25,9 +24,9 @@ export default function Conversations() {
                 let conversations = await Backend.getUserConversations(loggedInUserId);
 
                 let finalConversations = conversations;
-                if(id){
-                    finalConversations = conversations.filter( conv => conv.id_user2 === +id);
-                }
+                // if(id){
+                //     finalConversations = conversations.filter( conv => conv.id_user2 === +id);
+                // }
                 setConversations(finalConversations);
             } catch (e) {
                 console.error(e);
@@ -35,7 +34,8 @@ export default function Conversations() {
         }
 
         fetchConversations();
-    }, [loggedInUserId, id]);
+    // }, [loggedInUserId, id]);
+    }, [loggedInUserId]);
 
   return (
 
@@ -49,13 +49,13 @@ export default function Conversations() {
                       {conversations.map((c) => (
 
                           <li onClick={()=> {
-
                               setIdUser1(c.id_user1)
                               setIdUser2(c.id_user2)
                           }} key={c.id_user2}>
-                              <Link to={`/conversations/${c.id_user2}`}>
                               {c.nom_entreprise}
-                              </Link>
+                              {/*<Link to={`/conversations/${c.id_user2}`}>*/}
+                              {/*{c.nom_entreprise}*/}
+                              {/*</Link>*/}
                           </li>
 
                       ))}
@@ -69,7 +69,7 @@ export default function Conversations() {
               <br/>
               <div className="col-sm-8">
                   {idUser1 > 0 &&
-                  <SendMessage idUser1={idUser1} idUser1={idUser2} />
+                  <SendMessage idUser1={idUser1} idUser2={idUser2} />
                   }
               </div>
           </div>
