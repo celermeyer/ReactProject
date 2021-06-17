@@ -17,7 +17,6 @@ export default  function Header ()  {
         }
 
     return (
-            <div className="upperMenu">
                 <div className="menuOptions">
                     <Link className='App-link'  to='/FAQ'>
                         FAQ
@@ -26,9 +25,16 @@ export default  function Header ()  {
                     <Link className='App-link' to='/conversations'>
                         Conversations
                     </Link>
-                    <Link className='App-link' to='/offers'>
-                        Offers
-                    </Link>
+                    {localStorage.getItem(LOGGED_IN_USER_IS_ENTERPRISE) == 'true' ? (
+                        <Link className="App-link" to={`/appliers`}>
+                            See List of Appliers
+                        </Link>
+                    ) : (
+                        <Link className="App-link" to={`/offers`}>
+                            See List of Offers
+                        </Link>
+                    )}
+
                     {!localStorage.getItem(TOKEN_STORAGE_KEY) ? (
                         <Link className="App-link" to={`/login`}>
                             Login
@@ -39,7 +45,6 @@ export default  function Header ()  {
                         </a>
                     )}
                 </div>
-            </div>
         )
 
 }
