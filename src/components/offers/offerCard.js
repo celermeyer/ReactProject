@@ -15,13 +15,10 @@ export default function OffersCards ({offers}){
                        <h2 className="offerName">{offer.nom} </h2>
                    </div>
                    <div className="bottomOfOffer">
-                       <p > Company name: {offer.id_entreprise}</p>
-                       <p className="infoOffer">{offer.taux} taux </p>
-                       <p className="infoOffer"> visit us at {offer.url}</p>
-                       <p className="infoOffer"> Contrat : {offer.contrat}</p>
-
+                       <p className="infoOffer">• Percentage : {offer.taux} </p>
+                       <p className="infoOffer">• Contract type : {offer.contrat}</p>
+                       <p className="infoOffer">• More information : <a href={offer.url}> link </a></p>
                    </div>
-
                    </Link>
                </li>
            ))}
