@@ -15,7 +15,6 @@ import React, {useContext} from 'react';
 import ThemeBotton from "./components/BtnToggle/ThemeButton";
 import {ThemeContext} from "./Context/ThemeContext";
 import image from './img/discussion.png';
-import Header from "./components/header/Header";
 
 
 

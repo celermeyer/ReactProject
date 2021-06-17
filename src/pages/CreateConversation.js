@@ -35,7 +35,7 @@ export default function CreateConversation() {
     }
 
     fetchUsersList();
-  }, []);
+  }, [loggedInUserId]);
 
   const history = useHistory();
 

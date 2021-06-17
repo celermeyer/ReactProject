@@ -1,7 +1,6 @@
 import React from "react";
 import {LOGGED_IN_USER_ID, LOGGED_IN_USER_IS_ENTERPRISE, TOKEN_STORAGE_KEY} from "../utils/request";
 import { Link } from "react-router-dom";
-import Login from "./Login";
 
 export default function Home() {
   const logout = (e) => {
