@@ -51,12 +51,10 @@ export const Backend = {
   },
 
   getConversationMessages: async function (idUser1, idUser2) {
-    console.log(idUser1 + ' ' + idUser2);
     return request(ENDPOINTS.CONVERSATIONMESSAGES + "/" + idUser1 + "/" + idUser2);
   },
 
   sendMessage: async function (idUser1, idUser2, message) {
-    console.log(idUser1 + ' ' + idUser2);
     return request(ENDPOINTS.CONVERSATIONMESSAGES + "/" + idUser1 + "/" + idUser2,{
       method: "POST",
       data: { message },

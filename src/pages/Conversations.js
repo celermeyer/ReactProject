@@ -4,7 +4,7 @@ import SendMessage from "./SendMessage";
 import "./pagesStyle.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import {Link, useHistory, useParams} from "react-router-dom";
-import {LOGGED_IN_USER_ID} from "../utils/request";
+import {LOGGED_IN_USER_ID, LOGGED_IN_USER_IS_ENTERPRISE} from "../utils/request";
 import "./style.css";
 
 
@@ -47,17 +47,19 @@ export default function Conversations() {
 
                   <ul>
                       {conversations.map((c) => (
-
                           <li onClick={()=> {
                               setIdUser1(c.id_user1)
                               setIdUser2(c.id_user2)
                           }} key={c.id_user2}>
-                              {c.nom_entreprise}
+                              {localStorage.getItem(LOGGED_IN_USER_IS_ENTERPRISE) == 'true' ? (
+                                  c.nom_postulant
+                                  ):(
+                                  c.nom_entreprise
+                              )}
                               {/*<Link to={`/conversations/${c.id_user2}`}>*/}
                               {/*{c.nom_entreprise}*/}
                               {/*</Link>*/}
                           </li>
-
                       ))}
                   </ul>
 
