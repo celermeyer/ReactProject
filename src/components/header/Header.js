@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import image from "../../img/discussion_1.png";
+import image from "../../img/discussion.png";
 import './header.style.css';
 import {LOGGED_IN_USER_ID, LOGGED_IN_USER_IS_ENTERPRISE, TOKEN_STORAGE_KEY} from "../../utils/request";
 
@@ -18,9 +18,6 @@ export default  function Header ()  {
 
     return (
             <div className="upperMenu">
-                <Link className ='logo-container' to="/">
-                    <img className="App-img" src={image} alt="WeAllChat"/>
-                </Link>
                 <div className="menuOptions">
                     <Link className='App-link'  to='/FAQ'>
                         FAQ

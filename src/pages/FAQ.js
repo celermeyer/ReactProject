@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import Faq from "react-faq-component";
 import captureOffers from "../img/CaptureOffre.PNG";
 import "./style.css";
-import image from "../img/discussion_1.png";
-import {Link} from "react-router-dom";
 
 const data = {
     title: "FAQ (How it works)",
