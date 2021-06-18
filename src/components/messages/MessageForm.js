@@ -1,4 +1,5 @@
 import React from "react";
+import "./message.css";
 
 export class MessageForm extends React.Component {
     constructor(){
@@ -51,12 +52,13 @@ export class MessageForm extends React.Component {
                     />
                     <br />
                     <input
+                        
                         required
                         type="text"
                         name="messageText"
                         onChange={this.handleFormInputChange}
                         value={this.state.newMessage.messageText}
-                        placeholder="your message here"
+                        placeholder="Your message here"
                     />
                     <br />
                     <input

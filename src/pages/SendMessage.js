@@ -34,14 +34,17 @@ export default function SendMessage(props) {
 
       <form onSubmit={handleSubmit}>
         <input
+            class="send-input"
             required
-            placeholder="your message here"
+            placeholder="Your message here"
             type="text"
             onChange={handleMessageChange}
             value={message}
         />
         <br />
+        
         <button className="button" type="submit">Send Message</button>
+        
       </form>
     </div>
   );
