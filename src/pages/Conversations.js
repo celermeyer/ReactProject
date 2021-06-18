@@ -3,7 +3,6 @@ import { Backend } from "../services/backend";
 import SendMessage from "./SendMessage";
 import "./pagesStyle.css";
 import 'bootstrap/dist/css/bootstrap.css';
-import {Link, useHistory, useParams} from "react-router-dom";
 import {LOGGED_IN_USER_ID, LOGGED_IN_USER_IS_ENTERPRISE} from "../utils/request";
 import "./style.css";
 
@@ -22,19 +21,18 @@ export default function Conversations() {
         async function fetchConversations() {
             try {
                 let conversations = await Backend.getUserConversations(loggedInUserId);
-
-                let finalConversations = conversations;
-                // if(id){
-                //     finalConversations = conversations.filter( conv => conv.id_user2 === +id);
-                // }
-                setConversations(finalConversations);
+                if(localStorage.getItem(LOGGED_IN_USER_IS_ENTERPRISE) == 'true'){
+                    conversations.sort((a, b) => (a.nom_postulant > b.nom_postulant) ? 1 : -1);
+                }else{
+                    conversations.sort((a, b) => (a.nom_entreprise > b.nom_entreprise) ? 1 : -1);
+                }
+                setConversations(conversations);
             } catch (e) {
                 console.error(e);
             }
         }
 
         fetchConversations();
-    // }, [loggedInUserId, id]);
     }, [loggedInUserId]);
 
   return (

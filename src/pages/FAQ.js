@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React  from "react";
 import Faq from "react-faq-component";
-import captureOffers from "../img/CaptureListOfOffers.PNG";
-import captureLight from "../img/CaptureLight.PNG";
-import captureDark from "../img/CaptureDark.PNG";
-import captureLogin from "../img/CaptureLogin.PNG";
-import captureCreateConversation from "../img/CaptureCreateConversation.PNG";
+import login1 from "../img/login1.png";
+import login2 from "../img/login2.png";
+import conv1 from "../img/conversation1.png";
+import conv2 from "../img/conversation2.png";
+import close1 from "../img/close1.png";
+import close2 from "../img/close2.png";
+import dark from "../img/dark.png";
+import captureOffers from "../img/screenshotListOffers.png";
+import captureOffersList from "../img/screenshotOfferList.png";
 import "./style.css";
 
 const data = {
@@ -12,47 +16,53 @@ const data = {
     rows: [
         {
             title: "How to connect to WeAll Chat",
-            content:
-                <div>
-                    <p> Please create your account on <a href="https://app.weallbackend.ch/connexion">  WeAllApp</a>
-                    and enter your email and password into the Login form</p>
-                    <img className="capture" src={captureLogin}/>
-                </div>
-            ,
+            content: <p> Click on Login button to the home page and enter your login and your password.<br/><br/>
+            <img class="imageForFAQ" src={login1}/><br/><br/>
+            <p>Applicant connection :
+            sylvain.meyer@students.hevs.ch</p>
+            <p>Entreprise connection :
+            contact@entreprise.ch</p><br/>
+
+            <p>When you are connected, you should see this : </p>
+            <img class="imageForFAQ" src={login2}/><br/><br/>
+            </p>,
+
         },
         {
             title: "How do I create a conversation",
-            content:
-                <div>
-                    <p> Choose the contacts in the drop list </p>
-                    <img className="capture" src={captureCreateConversation}/>
-                </div>
+            content: <p>
+                After login in WeAll, click on "Create a conversation".<br/><br/>
+                <img class="imageForFAQ" src={conv1}/><br/><br/>
+                Choose the applicant or the company and click on "Create conversation" <br/><br/>
+                <img class="imageForFAQ" src={conv2}/><br/><br/>
+            </p>
         },
         {
             title: "How do I close a conversation",
-            content: `Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc, ac sagittis leo elit vel lorem.
-            Fusce tempor lacus ut libero posuere viverra. Nunc velit dolor, tincidunt at varius vel, laoreet vel quam.
-            Sed dolor urna, lobortis in arcu auctor, tincidunt mattis ante. Vivamus venenatis ultricies nibh in volutpat.
-            Cras eu metus quis leo vestibulum feugiat nec sagittis lacus.Mauris vulputate arcu sed massa euismod dignissim. `,
+            content: <p>Go to the home page and choose "Close a conversation".<br/><br/>
+                     <img class="imageForFAQ" src={close1}/><br/><br/>
+            <p>After that, you can choose the company/applicant you want to end the conversation with.</p>
+            <img class="imageForFAQ" src={close2}/><br/><br/>
+            Click on "Close conversation".
+            </p>,
         },
         {
             title: "How do I see my offers",
-            content:
-                <div>
-                    <p> In the menu item "See List of Offers" you can see all avaliable offers  </p>
-                    <img className="capture" src={captureOffers} />
-                </div>
+            content: <p> Click on the "See List of Offers" button <br/><br/>
+            <img class="imageForFAQ" src={captureOffers} /><br/><br/>
+            <p>After that, you have the list of all the Offers or Applicant</p>
+            <img class="imageForFAQ" src={captureOffersList} />
+            </p>,
 
         },
         {
-            title: "How to choose Light or Dark theme?",
-            content: <div>
-                <p>You can switch between Dark or Light mode by clicking the button Light </p>
-                <img className="capture" src={captureLight}/>
-                <p>or the button Dark for the Dark mode</p>
-                <img className="capture" src={captureDark}/>
-            </div>
-
+            title: "How to choose Light or Dark theme",
+            content:
+                <p>
+                    At any time in the application, you can choose Dark or Light
+                     theme by simply clicking on the following button :<br/><br/>
+                    <img class="imageForFAQ" src={dark} />
+                </p>,
         },
     ],
 };
@@ -63,7 +73,6 @@ const styles = {
     rowTitleColor: "grey",
     rowContentColor: 'grey',
     arrowColor: "red",
-    background: "transparent",
 };
 
 const config = {

@@ -123,7 +123,8 @@ li:hover{
 
 }
 .button {
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 60px;
     padding: 5px 10px 5px 10px;
     border-radius: 10px;
     border: none;
@@ -137,7 +138,7 @@ li:hover{
     color: #2d3436;
 }
 
-. row {
+.row {
     color: #00a5d3;
 }
 
@@ -148,6 +149,23 @@ li:hover{
 .imageForFAQ {
     width: 50%;
     height: 25%;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.send-input{
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 5px 10px 6px 10px;
+    margin: 20px 0 20px 0;
+    font-size: 25px;
+    outline: none;
+
+}
+
+::placeholder{
+    font-size: 20px;
 }
 
 .formMessageContainer {

@@ -1,7 +1,6 @@
 import React from "react";
 import {LOGGED_IN_USER_ID, LOGGED_IN_USER_IS_ENTERPRISE, TOKEN_STORAGE_KEY} from "../utils/request";
 import { Link } from "react-router-dom";
-import Login from "./Login";
 
 export default function Home() {
   const logout = (e) => {
@@ -15,7 +14,9 @@ export default function Home() {
   return (
     <>
       {!localStorage.getItem(TOKEN_STORAGE_KEY) ? (
-          <Login/>
+          <Link className="App-link" to={`/login`}>
+            Login
+          </Link>
       ) : (
         <a className="App-link" onClick={logout} href="/">
           Logout
@@ -46,6 +47,10 @@ export default function Home() {
             <Link className="App-link" to={`/closeConversation`}>
             Close a Conversation
             </Link>}
+
+      <Link className='App-link'  to={'/FAQ'}>
+        FAQ
+      </Link>
 
         </>
   );

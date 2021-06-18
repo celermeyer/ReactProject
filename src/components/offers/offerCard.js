@@ -1,7 +1,5 @@
-
 import React from "react";
 import "./offerCard.css";
-import {Link} from "react-router-dom";
 
 export default function OffersCards ({offers}){
 
@@ -10,7 +8,6 @@ export default function OffersCards ({offers}){
         <div >
            {offers.map((offer, index)=>(
                <li key={index} className="offerCard">
-                   {/*<Link to={`/offers/${offer.id_offre}`}>*/}
                    <div className="topOfOffer">
                        <h2 className="offerName">{offer.nom} </h2>
                    </div>
@@ -19,7 +16,6 @@ export default function OffersCards ({offers}){
                        <p className="infoOffer">• Contract type : {offer.contrat}</p>
                        <p className="infoOffer">• More information : <a href={offer.url}> link </a></p>
                    </div>
-                   {/*</Link>*/}
                </li>
            ))}
         </div>

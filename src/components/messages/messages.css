@@ -1,5 +1,5 @@
 .messagePostulant {
-    color: #f50c0c;
+    color: rgb(255, 100, 100);
     font-size: 1em;
     font-style: italic;
     background-color: #aee7f7;
@@ -10,22 +10,33 @@
     width: 100%;
     display: flex;
 
+    overflow: hidden;
+    word-wrap: break-word;
 }
 
 .messageEntreprise {
-    color: #0000ff;
+    color: rgb(93, 93, 248);
     font-size: 1em;
     font-style: italic;
     background-color: #aee7f7;
     border-radius: 15px;
     text-align: right;
     margin-bottom: 15px;
-    padding: 5px 5px 5px 15px;
+    padding: 5px 20px 5px 20px;
+    background-color: #aee7f7;
+    border-radius: 15px;
+    word-wrap: break-word;
 }
 
 .whospeak{
-    font-size: 10px;
+    font-size: 15px;
     text-align: left;
     margin-bottom: 0;
-    color: black;
+    color: #2e8097;
+}
+
+.message-date{
+    font-size: 15px;
+    color: #2e8097;
+    margin: 20px 0  0px 0;
 }

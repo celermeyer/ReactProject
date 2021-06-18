@@ -15,7 +15,6 @@ import React, {useContext} from 'react';
 import ThemeBotton from "./components/BtnToggle/ThemeButton";
 import {ThemeContext} from "./Context/ThemeContext";
 import image from './img/discussion.png';
-import Header from "./components/header/Header";
 
 
 
@@ -26,7 +25,7 @@ function App() {
   return (
         <div className={darkMode ? "App dark" : "App light"}>
           <header className="App-header">
-                <p>Welcome to the WeAll Chat</p>
+                <p class="title-weall">Welcome to the WeAll Chat</p>
             <BrowserRouter>
                 <Link className ='logo-container' to="/">
                     <img className="App-img" src={image} alt="WeAllChat"/>
