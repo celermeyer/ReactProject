@@ -26,7 +26,7 @@ export default function ConversationMessages(props) {
 
   return (
       <div>
-        <h1 class="title-conversation">Your Messages</h1>
+        <h1 class="headings">Your Messages</h1>
             <ul>
             <Messages messages = {conversationMessages}/>
             </ul>

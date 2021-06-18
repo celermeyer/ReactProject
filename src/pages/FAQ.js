@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Faq from "react-faq-component";
-import captureOffers from "../img/CaptureOffre.PNG";
+import captureOffers from "../img/CaptureListOfOffers.PNG";
+import captureLight from "../img/CaptureLight.PNG";
+import captureDark from "../img/CaptureDark.PNG";
+import captureLogin from "../img/CaptureLogin.PNG";
+import captureCreateConversation from "../img/CaptureCreateConversation.PNG";
 import "./style.css";
 
 const data = {
@@ -8,12 +12,21 @@ const data = {
     rows: [
         {
             title: "How to connect to WeAll Chat",
-            content: `text from word file`,
+            content:
+                <div>
+                    <p> Please create your account on <a href="https://app.weallbackend.ch/connexion">  WeAllApp</a>
+                    and enter your email and password into the Login form</p>
+                    <img className="capture" src={captureLogin}/>
+                </div>
+            ,
         },
         {
             title: "How do I create a conversation",
             content:
-                "How to choose a Company or a Postulant",
+                <div>
+                    <p> Choose the contacts in the drop list </p>
+                    <img className="capture" src={captureCreateConversation}/>
+                </div>
         },
         {
             title: "How do I close a conversation",
@@ -24,12 +37,22 @@ const data = {
         },
         {
             title: "How do I see my offers",
-            content: <p> <img className="captureOffres" src={captureOffers} /></p>,
+            content:
+                <div>
+                    <p> In the menu item "See List of Offers" you can see all avaliable offers  </p>
+                    <img className="capture" src={captureOffers} />
+                </div>
+
         },
         {
-            title: "How to choose Light or Dark theme",
-            content:
-                "How to choose a Company or a Postulant",
+            title: "How to choose Light or Dark theme?",
+            content: <div>
+                <p>You can switch between Dark or Light mode by clicking the button Light </p>
+                <img className="capture" src={captureLight}/>
+                <p>or the button Dark for the Dark mode</p>
+                <img className="capture" src={captureDark}/>
+            </div>
+
         },
     ],
 };
@@ -40,6 +63,7 @@ const styles = {
     rowTitleColor: "grey",
     rowContentColor: 'grey',
     arrowColor: "red",
+    background: "transparent",
 };
 
 const config = {
