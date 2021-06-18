@@ -20,8 +20,10 @@ export default function CreateConversation() {
         let localUsersList;
         if(localStorage.getItem(LOGGED_IN_USER_IS_ENTERPRISE) == 'true'){
           localUsersList = await Backend.getAppliers();
+          localUsersList.sort((a, b) => (a.prenom > b.prenom) ? 1 : -1);
         }else{
           localUsersList = await Backend.getCompanies();
+          localUsersList.sort((a, b) => (a.nom > b.nom) ? 1 : -1);
         }
 
         let finalList = [];

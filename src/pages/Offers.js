@@ -17,14 +17,9 @@ export default function Offers() {
       try {
         let offers = await Backend.getOffers();
 
-        let finalOffers = offers;
-        if(id) {
-          finalOffers = offers.filter(o => o.id_offre === +id);
-          let companies = offers.find(o => o.id_offre === +id).id_entreprise
+        offers.sort((a, b) => (a.nom > b.nom) ? 1 : -1);
 
-          console.log("Company name" + companies.nom);
-        }
-        setOffers(finalOffers);
+        setOffers(offers);
 
       } catch (e) {
         console.error(e);
