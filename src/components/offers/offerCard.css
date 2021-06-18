@@ -12,6 +12,7 @@
     backface-visibility: hidden;
     transform: translateZ(0);
     transition: transform 0.25s ease-out;
+    margin: 30px 0 40px 0;
 }
 
 .offerCard:hover {

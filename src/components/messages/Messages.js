@@ -13,12 +13,12 @@ export default function ConversationMessages({messages}){
                     {m.id_user1 == loggedInUserId ? (
                         <div className="messagePostulant"><p class="whospeak">Moi: </p>
                             {m.message}
-                            <p className="whospeak">{m.date}</p>
+                            <p className="message-date">{m.date}</p>
                         </div>
                     ) : (
                         <div className="messageEntreprise"><p class="whospeak">Entreprise:</p>
                             {m.message}
-                            <p class="whospeak">{m.date}</p>
+                            <p class="message-date">{m.date}</p>
                         </div>
                     )}
                 </div>
