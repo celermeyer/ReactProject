@@ -52,8 +52,14 @@ li{
     width: 100%;
     display: flow;
     font-size: 90%;
+}
 
+li.active{
+    background-color: #edbe72;
+}
 
+li.active:hover{
+    background-color: #ebad4b;
 }
 
 li:hover{
