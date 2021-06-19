@@ -24,14 +24,12 @@ export default function Conversations() {
             try {
                 let conversations = await Backend.getUserConversations(loggedInUserId);
 
-                let finalConversations = conversations;
-
                 if(localStorage.getItem(LOGGED_IN_USER_IS_ENTERPRISE) == 'true'){
-                    finalConversations.sort((a, b) => (a.nom_postulant > b.nom_postulant) ? 1 : -1);
+                    conversations.sort((a, b) => (a.nom_postulant > b.nom_postulant) ? 1 : -1);
                 }else{
-                    finalConversations.sort((a, b) => (a.nom_entreprise > b.nom_entreprise) ? 1 : -1);
+                    conversations.sort((a, b) => (a.nom_entreprise > b.nom_entreprise) ? 1 : -1);
                 }
-                setConversations(finalConversations);
+                setConversations(conversations);
             } catch (e) {
                 console.error(e);
             }
@@ -53,6 +51,7 @@ function BackToConversations(){
             <div className="col-sm-4">
               <h1 className="headings">Your Conversations</h1>
               {conversations.length > 0 ? (
+
                   <ul>
                       {conversations.map((c) => (
                           <li className={c.id_user2 == id && "active"} onClick={()=> {
@@ -65,7 +64,9 @@ function BackToConversations(){
                                   c.nom_postulant
                                   ):(
                                   c.nom_entreprise
+
                               )}
+
                               </Link>
                           </li>
                       ))}
