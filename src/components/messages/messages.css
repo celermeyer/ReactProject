@@ -1,8 +1,8 @@
-.messagePostulant {
-    color: rgb(255, 100, 100);
+.messageMe {
+    color: black;
     font-size: 1em;
     font-style: italic;
-    background-color: #aee7f7;
+    background-color: #e38888;
     border-radius: 15px;
     text-align: left;
     margin-bottom: 15px;
@@ -11,16 +11,15 @@
     word-wrap: break-word;
 }
 
-.messageEntreprise {
-    color: rgb(93, 93, 248);
+.messageOthers {
+    color: black;
     font-size: 1em;
     font-style: italic;
-    background-color: #aee7f7;
+    background-color: #96cf65;
     border-radius: 15px;
     text-align: right;
     margin-bottom: 15px;
     padding: 5px 20px 5px 20px;
-    background-color: #aee7f7;
     border-radius: 15px;
     word-wrap: break-word;
 }
@@ -29,11 +28,9 @@
     font-size: 15px;
     text-align: left;
     margin-bottom: 0;
-    color: #2e8097;
 }
 
 .message-date{
     font-size: 15px;
-    color: #2e8097;
     margin: 20px 0  0px 0;
 }
