@@ -3,6 +3,7 @@ import { Backend } from "../services/backend";
 import { useHistory } from "react-router-dom";
 import {LOGGED_IN_USER_ID, LOGGED_IN_USER_IS_ENTERPRISE} from "../utils/request";
 import "./style.css";
+import Button from "../components/buttons/button";
 
 export default function CreateConversation() {
   const [idUser2, setIdUser2] = useState("");
@@ -60,7 +61,7 @@ export default function CreateConversation() {
   };
 
   return (
-      <div>
+      <div >
         <h1 class="headings">Create a Conversation</h1>
         {usersList.filter(u => u.nom !== "").length > 0 ? (
             <form onSubmit={handleSubmit}>
@@ -72,9 +73,12 @@ export default function CreateConversation() {
               <br/>
               <button class="btn-closeconv" type="submit">Create Conversation</button>
             </form>
+
         ) : (
             <p>No data available &#x1F615;</p>
         )}
+
       </div>
+
   );
 }
