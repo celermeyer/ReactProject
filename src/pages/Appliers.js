@@ -10,7 +10,9 @@ export default function Appliers() {
   useEffect(() => {
     async function fetchAppliers() {
       try {
+        //Fetch data of appliers in the backend
         let appliers = await Backend.getAppliers();
+        //Sort appliers
         appliers.sort((a, b) => (a.prenom > b.prenom) ? 1 : -1);
         setAppliers(appliers);
       } catch (e) {
