@@ -189,7 +189,7 @@ li:hover{
 }
 
 .formMessageContainer input{
-    width: 50%;
+    width: 35%;
     clear: both;
     position: absolute;
     display: flex;
