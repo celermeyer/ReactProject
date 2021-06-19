@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Backend } from "../services/backend";
-import {Link} from "react-router-dom";
 import "../components/offers/offerCard.css";
 
 export default function Appliers() {
