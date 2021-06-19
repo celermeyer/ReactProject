@@ -24,17 +24,12 @@ export default function Conversations() {
             try {
                 let conversations = await Backend.getUserConversations(loggedInUserId);
 
-                let finalConversations = conversations;
-                if(id){
-                    finalConversations = conversations.filter( conv => conv.id_user2 === +id);
-                }
-
                 if(localStorage.getItem(LOGGED_IN_USER_IS_ENTERPRISE) == 'true'){
-                    finalConversations.sort((a, b) => (a.nom_postulant > b.nom_postulant) ? 1 : -1);
+                    conversations.sort((a, b) => (a.nom_postulant > b.nom_postulant) ? 1 : -1);
                 }else{
-                    finalConversations.sort((a, b) => (a.nom_entreprise > b.nom_entreprise) ? 1 : -1);
+                    conversations.sort((a, b) => (a.nom_entreprise > b.nom_entreprise) ? 1 : -1);
                 }
-                setConversations(finalConversations);
+                setConversations(conversations);
             } catch (e) {
                 console.error(e);
             }
@@ -59,7 +54,7 @@ function BackToConversations(){
 
                   <ul>
                       {conversations.map((c) => (
-                          <li onClick={()=> {
+                          <li className={c.id_user2 == id && "active"} onClick={()=> {
                               setIdUser1(c.id_user1)
                               setIdUser2(c.id_user2)
                           }} key={c.id_user2}>
@@ -75,7 +70,6 @@ function BackToConversations(){
                               </Link>
                           </li>
                       ))}
-                      <div>  <Link to={`/conversations`} > </Link> </div>
                   </ul>
 
               ) : (
@@ -92,5 +86,8 @@ function BackToConversations(){
           </div>
 
       </div>
+
+
   );
+
 }
