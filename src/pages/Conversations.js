@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import {Link, useHistory, useParams} from "react-router-dom";
 import {LOGGED_IN_USER_ID, LOGGED_IN_USER_IS_ENTERPRISE} from "../utils/request";
 import "./style.css";
-import {AiOutlineArrowLeft} from "react-icons/ai";
 
 
 
@@ -76,7 +75,7 @@ function BackToConversations(){
                               </Link>
                           </li>
                       ))}
-                      <div>  <Link to={`/conversations`} > <AiOutlineArrowLeft/> </Link> </div>
+                      <div>  <Link to={`/conversations`} > </Link> </div>
                   </ul>
 
               ) : (
@@ -93,8 +92,5 @@ function BackToConversations(){
           </div>
 
       </div>
-
-
   );
-
 }
