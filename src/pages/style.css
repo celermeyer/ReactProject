@@ -36,6 +36,30 @@
     margin-top: 15px;
 }
 
+
+.conversations {
+    color: brown;
+}
+
+.c {
+    color: darkgreen;
+}
+
+.headings {
+    color: aqua;
+    font-size: 3vw;
+    display: flex;
+    color: coral;
+}
+
+.button {
+    color: darkcyan;
+    background: #81ecec;
+    box-shadow: 0 2px 5px #ccc;
+    display : flex;
+}
+
+
 h1.headings{
     color: #61dafb;
 

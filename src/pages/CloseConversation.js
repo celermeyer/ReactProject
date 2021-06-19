@@ -9,6 +9,7 @@ export default function CloseConversation() {
   const [idUser2, setIdUser2] = useState("");
   const [usersList, setUsersList] = useState([]);
 
+  //get all id's of connected user
   const loggedInUserId = localStorage.getItem(LOGGED_IN_USER_ID);
 
   // Load the companies on component mounting
@@ -19,6 +20,7 @@ export default function CloseConversation() {
         let conversations = await Backend.getUserConversations(loggedInUserId);
 
         let localUsersList;
+        //If it's an entreprise connected
         if(localStorage.getItem(LOGGED_IN_USER_IS_ENTERPRISE) == 'true'){
           localUsersList = await Backend.getAppliers();
           localUsersList.sort((a, b) => (a.prenom > b.prenom) ? 1 : -1);

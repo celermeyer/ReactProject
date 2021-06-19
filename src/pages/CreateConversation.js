@@ -19,6 +19,7 @@ export default function CreateConversation() {
         let conversations = await Backend.getUserConversations(loggedInUserId);
 
         let localUsersList;
+        //Identify the user (entreprise or appliers) and choose the good second user
         if(localStorage.getItem(LOGGED_IN_USER_IS_ENTERPRISE) == 'true'){
           localUsersList = await Backend.getAppliers();
           localUsersList.sort((a, b) => (a.prenom > b.prenom) ? 1 : -1);
@@ -28,6 +29,8 @@ export default function CreateConversation() {
         }
 
         let finalList = [];
+        
+        //Control if a conversation exist with each user
         localUsersList.forEach(user => (conversations.find(conversation => conversation.id_user2 == user.id_user)==undefined) ? finalList.push(user) : console.log('plein'));
 
         setUsersList(finalList);

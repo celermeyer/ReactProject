@@ -16,7 +16,8 @@ const data = {
     rows: [
         {
             title: "How to connect to WeAll Chat",
-            content: <p> Click on Login button to the home page and enter your login and your password.<br/><br/>
+            content: <p> Click on Login button to the home page and 
+                enter your login and your password.<br/><br/>
             <img class="imageForFAQ" src={login1}/><br/><br/>
             <p>Applicant connection :
             sylvain.meyer@students.hevs.ch</p>

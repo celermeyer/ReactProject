@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Backend } from "../services/backend";
 import SendMessage from "./SendMessage";
-import "./pagesStyle.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import {Link, useHistory, useParams} from "react-router-dom";
 import {LOGGED_IN_USER_ID, LOGGED_IN_USER_IS_ENTERPRISE} from "../utils/request";
