@@ -43,7 +43,6 @@ export default function CloseConversation() {
   const history = useHistory();
 
   const handleIdUser2Change = (e) => {
-    console.log(e.target.value);
     setIdUser2(e.target.value);
   };
 

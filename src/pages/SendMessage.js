@@ -12,9 +12,6 @@ export default function SendMessage(props) {
   };
 
   const handleSubmit = async (e) => {
-
-    console.log('Send message');
-
     // Stop the browser from submitting in the "traditional" way
     e.preventDefault();
 
