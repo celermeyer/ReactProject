@@ -40,7 +40,7 @@ function App() {
                 <Route path="/closeConversation" component={CloseConversation} />
                 <Route path="/conversationMessages" component={ConversationMessages} />
                 <Route path="/sendMessage" component={SendMessage} />
-                <Route path="/FAQ" component={FAQ}/>
+                <Route path="/FAQ" component={FAQ} />
                 <Route path="/login" component={Login} />
               </Switch>
             </BrowserRouter>
