@@ -26,7 +26,7 @@ const data = {
             <p>When you are connected, you should see this : </p>
             <img class="imageForFAQ" src={login2}/><br/><br/>
             </p>,
-            
+
         },
         {
             title: "How do I create a conversation",
@@ -39,7 +39,7 @@ const data = {
         },
         {
             title: "How do I close a conversation",
-            content: <p>Go to the home page and choose "Close a conversation".<br/><br/> 
+            content: <p>Go to the home page and choose "Close a conversation".<br/><br/>
                      <img class="imageForFAQ" src={close1}/><br/><br/>
             <p>After that, you can choose the company/applicant you want to end the conversation with.</p>
             <img class="imageForFAQ" src={close2}/><br/><br/>
@@ -53,7 +53,7 @@ const data = {
             <p>After that, you have the list of all the Offers or Applicant</p>
             <img class="imageForFAQ" src={captureOffersList} />
             </p>,
-            
+
         },
         {
             title: "How to choose Light or Dark theme",

@@ -47,8 +47,13 @@ li{
     color: #61dafb;
     background-color: #aee7f7;
     color: #000000;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
+    width: 100%;
+    display: flow;
+    font-size: 90%;
+
+
 }
 
 li:hover{
@@ -123,7 +128,7 @@ li:hover{
 
 }
 .button {
-    margin-top: 30px;
+    margin-top: 60px;
     margin-bottom: 60px;
     padding: 5px 10px 5px 10px;
     border-radius: 10px;
@@ -131,6 +136,7 @@ li:hover{
     background-color: #61dafb;
     text-transform: uppercase;
     color: white;
+    position: absolute;
 }
 
 .title {
@@ -143,7 +149,6 @@ li:hover{
 
 .rowContentColor {
     color: #f50c0c;
-    
 }
 
 .imageForFAQ {
@@ -166,4 +171,35 @@ li:hover{
 
 ::placeholder{
     font-size: 20px;
+}
+
+.formMessageContainer {
+    width: 50%;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.formMessageContainer input{
+    width: 50%;
+    clear: both;
+    position: absolute;
+    display: flex;
+    padding: 5px 15px 5px 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.formCreateConversation {
+    position: relative;
+}
+
+.formCreateConversation button {
+    left: 50%;
+    position: relative;
+    transform: translate(-50%, -50%);
 }
